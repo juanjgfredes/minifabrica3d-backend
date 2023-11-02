@@ -4,7 +4,7 @@ import lombok.Data;
 
 public enum ERol {
 
-    USER,
-    ADMIN;
+    ADMIN,
+    USER
 
 }

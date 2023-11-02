@@ -12,8 +12,9 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private boolean isActive;
     private List<Address> addresses;
-    private List<ERol> rol;
+    private ERol rol;
     private LocalDateTime createdAt;
     private Cart cart;
 

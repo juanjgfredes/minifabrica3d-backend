@@ -1,4 +1,4 @@
-package com.backend.minifabrica3d.application.ports.driver.rest.exceptions;
+package com.backend.minifabrica3d.application.exceptions;
 
 public class ExceptionMessages {
 

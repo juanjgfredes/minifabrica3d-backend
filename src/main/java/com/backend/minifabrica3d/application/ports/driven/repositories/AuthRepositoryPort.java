@@ -1,4 +1,4 @@
-package com.backend.minifabrica3d.application.ports.driven.security.authentication;
+package com.backend.minifabrica3d.application.ports.driven.repositories;
 
 import com.backend.minifabrica3d.domain.model.User;
 

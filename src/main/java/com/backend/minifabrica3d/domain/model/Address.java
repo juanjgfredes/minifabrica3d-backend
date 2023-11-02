@@ -11,7 +11,8 @@ public class Address {
     private String street;
     private int numberStreet;
     private Department department;
-    private int numberDepartment;
+    private Integer numberDepartment;
     private String details;
     private List<User> users;
+
 }

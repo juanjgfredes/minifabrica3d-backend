@@ -1,11 +1,11 @@
 package com.backend.minifabrica3d.application.services;
 
-import com.backend.minifabrica3d.application.ports.driven.security.authentication.AuthRepositoryPort;
-import com.backend.minifabrica3d.application.ports.driven.security.authentication.AuthenticationPort;
-import com.backend.minifabrica3d.application.ports.driven.security.authentication.PasswordEncodePort;
+import com.backend.minifabrica3d.application.ports.driven.repositories.AuthRepositoryPort;
+import com.backend.minifabrica3d.application.ports.driven.security.AuthenticationPort;
+import com.backend.minifabrica3d.application.ports.driven.security.PasswordEncodePort;
 import com.backend.minifabrica3d.application.ports.driver.rest.authorization.AuthRestPort;
-import com.backend.minifabrica3d.application.ports.driver.rest.exceptions.CustomException;
-import com.backend.minifabrica3d.application.ports.driver.rest.exceptions.ExceptionMessages;
+import com.backend.minifabrica3d.application.exceptions.CustomException;
+import com.backend.minifabrica3d.application.exceptions.ExceptionMessages;
 import com.backend.minifabrica3d.domain.model.User;
 import lombok.RequiredArgsConstructor;
 
