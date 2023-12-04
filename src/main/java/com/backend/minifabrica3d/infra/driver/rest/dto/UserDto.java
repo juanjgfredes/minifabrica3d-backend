@@ -1,4 +1,4 @@
-package com.backend.minifabrica3d.infra.driver.dto;
+package com.backend.minifabrica3d.infra.driver.rest.dto;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public record UserDto(
         String password,
         boolean isActive,
         List<AddressDto> addresses,
-        List<String> rol
+        String rol
 
 ) {
 }

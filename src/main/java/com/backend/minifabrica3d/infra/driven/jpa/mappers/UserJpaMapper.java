@@ -5,8 +5,8 @@ import com.backend.minifabrica3d.infra.driven.jpa.entities.UserEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper( componentModel = "spring", uses = RolMapper.class )
-public interface UserMapper {
+@Mapper( componentModel = "spring", uses = RolJpaMapper.class )
+public interface UserJpaMapper {
 
     @Mapping( target = "rol" , source="rol.name" )
     User toUserModel( UserEntity userEntity );

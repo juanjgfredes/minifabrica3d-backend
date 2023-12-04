@@ -12,3 +12,14 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: validate
+
+  logging:
+    level:
+      org:
+        hibernate:
+          SQL: DEBUG
+          type:
+            descriptor:
+              sql:
+                BasicBinder: TRACE
+

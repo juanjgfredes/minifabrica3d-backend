@@ -6,5 +6,6 @@ public interface AuthRestPort {
 
     User login(User user );
     User register( User user );
+    User showUser( int id );
 
 }

@@ -1,7 +1,10 @@
 package com.backend.minifabrica3d.infra.driven.jpa.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,18 +13,25 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
-@Table( name = "user", schema = "users")
+@Table( name = "users", schema = "users")
 public class UserEntity implements UserDetails {
 
         @Id
-        @GeneratedValue()
-        private Long id;
+        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
+        @SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", allocationSize = 1, schema = "users")
+        private Integer id;
         private String username;
         private String email;
         private String password;
+        @Builder.Default
         private Boolean isActive = Boolean.TRUE;
+        @ManyToOne
+        @JoinColumn( name = "id_rol" )
         private Rol rol;
         @Column( name = "created_at" )
         private LocalDateTime createdAt;

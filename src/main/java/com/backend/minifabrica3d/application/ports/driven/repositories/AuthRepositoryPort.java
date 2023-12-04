@@ -9,5 +9,6 @@ public interface AuthRepositoryPort {
     Optional<User> getByEmail( String email );
     User saveRegister( User user );
     boolean ExistByEmail( String email );
+    User getUserById( int id );
 
 }

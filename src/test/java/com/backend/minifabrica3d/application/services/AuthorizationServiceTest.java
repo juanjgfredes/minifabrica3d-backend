@@ -1,10 +1,9 @@
-package com.backend.minifabrica3d.services;
+package com.backend.minifabrica3d.application.services;
 
 import com.backend.minifabrica3d.application.ports.driven.repositories.AuthRepositoryPort;
 import com.backend.minifabrica3d.application.ports.driven.security.AuthenticationPort;
 import com.backend.minifabrica3d.application.ports.driven.security.PasswordEncodePort;
 import com.backend.minifabrica3d.application.exceptions.CustomException;
-import com.backend.minifabrica3d.application.services.AuthorizationService;
 import com.backend.minifabrica3d.domain.model.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

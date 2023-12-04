@@ -21,23 +21,23 @@ public class ApplicationConfig {
     private final UserRepository userRepository;
 
     @Bean
-    private UserDetailsService userDetailsService() {
+    public UserDetailsService userDetailsService() {
         return email -> userRepository.findByEmail( email )
                 .orElseThrow( () -> new AppException("no se encontro el usuario con el email " + email, HttpStatus.NOT_FOUND));
     }
 
     @Bean
-    private AuthenticationManager authenticationManager( AuthenticationConfiguration config ) throws Exception {
+    public AuthenticationManager authenticationManager( AuthenticationConfiguration config ) throws Exception {
         return config.getAuthenticationManager();
     }
 
     @Bean
-    private PasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    private AuthenticationProvider authenticationProvider() {
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setPasswordEncoder( passwordEncoder() );
         authenticationProvider.setUserDetailsService( userDetailsService() );

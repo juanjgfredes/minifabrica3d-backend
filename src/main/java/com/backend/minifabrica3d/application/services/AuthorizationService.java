@@ -8,8 +8,10 @@ import com.backend.minifabrica3d.application.exceptions.CustomException;
 import com.backend.minifabrica3d.application.exceptions.ExceptionMessages;
 import com.backend.minifabrica3d.domain.model.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
+@Component
 public class AuthorizationService implements AuthRestPort {
 
     private final AuthRepositoryPort authRepository;
@@ -42,6 +44,11 @@ public class AuthorizationService implements AuthRestPort {
         User userRegistered = authRepository.saveRegister( user );
 
         return userRegistered;
+    }
+
+    @Override
+    public User showUser(int id) {
+        return authRepository.getUserById( id );
     }
 
 }
