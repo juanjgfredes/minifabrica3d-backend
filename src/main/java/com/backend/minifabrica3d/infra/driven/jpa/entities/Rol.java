@@ -16,7 +16,7 @@ public class Rol {
 
     @Id
     @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "rol_id_seq" )
-    @SequenceGenerator( name = "rol_id_seq", sequenceName = "rol_id_seq", allocationSize = 1, schema = "users")
+    @SequenceGenerator( name = "rol_id_seq", sequenceName = "rol_id_seq", schema = "users")
     private short id;
 
     @Enumerated( EnumType.STRING )

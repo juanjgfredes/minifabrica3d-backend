@@ -10,7 +10,7 @@ public record LoginRequestDto(
         String email,
 
         @NotBlank( message = "la contraseña no puede estar vacia" )
-        @Size( min = 8, message = "la contraseña debe tener minimo 6 caracteres" )
+        @Size( min = 6, message = "la contraseña debe tener minimo 6 caracteres" )
         String password
 
 ) {

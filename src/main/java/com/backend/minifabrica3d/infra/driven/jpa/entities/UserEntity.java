@@ -23,7 +23,7 @@ public class UserEntity implements UserDetails {
 
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
-        @SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", allocationSize = 1, schema = "users")
+        @SequenceGenerator(name = "user_id_seq", sequenceName = "user_id_seq", schema = "users")
         private Integer id;
         private String username;
         private String email;

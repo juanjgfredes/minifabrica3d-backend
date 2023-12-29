@@ -1,7 +1,7 @@
 package com.backend.minifabrica3d.infra.driven.security.config;
 
+import com.backend.minifabrica3d.application.exceptions.CustomException;
 import com.backend.minifabrica3d.infra.driven.jpa.repositories.UserRepository;
-import com.backend.minifabrica3d.infra.exception.AppException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class ApplicationConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         return email -> userRepository.findByEmail( email )
-                .orElseThrow( () -> new AppException("no se encontro el usuario con el email " + email, HttpStatus.NOT_FOUND));
+                .orElseThrow( () -> new CustomException("no se encontro el usuario con el email " + email, HttpStatus.NOT_FOUND.value()));
     }
 
     @Bean

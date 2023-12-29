@@ -8,6 +8,7 @@ import com.backend.minifabrica3d.infra.driver.rest.dto.LoginResponseDto;
 import com.backend.minifabrica3d.infra.driver.rest.dto.RegisterRequestDto;
 import com.backend.minifabrica3d.infra.driver.rest.dto.UserDto;
 import com.backend.minifabrica3d.infra.driver.rest.mappers.UserRestMapper;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class AuthController {
     private final UserAuthProvider authProvider;
 
     @PostMapping( "/register" )
-    public ResponseEntity<LoginResponseDto> register( @RequestBody RegisterRequestDto registerDto ){
+    public ResponseEntity<LoginResponseDto> register( @RequestBody @Valid RegisterRequestDto registerDto ){
         User userToRegister = userMapper.toUserModel( registerDto );
         User userRegistered = authRest.register( userToRegister );
         LoginResponseDto loginResponseDto = getUserLogin( userRegistered );
@@ -30,7 +31,7 @@ public class AuthController {
     }
 
     @PostMapping( "/login" )
-    public ResponseEntity<LoginResponseDto> login( @RequestBody LoginRequestDto loginRequestDto ){
+    public ResponseEntity<LoginResponseDto> login( @RequestBody @Valid LoginRequestDto loginRequestDto ){
         User userToLogin = userMapper.toUserModel( loginRequestDto );
         User userLogged = authRest.login( userToLogin );
         LoginResponseDto loginResponseDto = getUserLogin( userLogged );
