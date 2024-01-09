@@ -37,7 +37,7 @@ public class PostgresqlAuthRepositoryAdapterTest {
                 .password( "passwodrPrueba" )
                 .build();
         User userModel = User.builder()
-                .id( 2L )
+                .id( 2 )
                 .email( email )
                 .username( "prueba" )
                 .password( "passwodrPrueba" )
@@ -68,7 +68,7 @@ public class PostgresqlAuthRepositoryAdapterTest {
                 .password( "passwodrPrueba" )
                 .build();
         User userModel = User.builder()
-                .id( 2L )
+                .id( 2 )
                 .email( "prueba@test.com" )
                 .username( "prueba" )
                 .password( "passwodrPrueba" )

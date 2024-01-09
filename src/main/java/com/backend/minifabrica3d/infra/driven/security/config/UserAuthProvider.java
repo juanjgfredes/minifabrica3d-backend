@@ -60,7 +60,7 @@ public class UserAuthProvider {
         User user = User.builder()
                 .email( decoded.getSubject() )
                 .username( decoded.getClaim( "username" ).asString() )
-                .id( decoded.getClaim("id").asLong() )
+                .id( decoded.getClaim("id").asInt() )
                 .build();
 
         return new UsernamePasswordAuthenticationToken( user, null, roles );

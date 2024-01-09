@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class CartItem {
 
-    private Long id;
+    private Integer id;
     private Cart cart;
     private Product product;
     private int amount;

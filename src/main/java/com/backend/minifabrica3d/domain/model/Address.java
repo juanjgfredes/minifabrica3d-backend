@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class Address {
 
-    private Long id;
+    private Integer id;
     private String street;
     private int numberStreet;
     private Department department;

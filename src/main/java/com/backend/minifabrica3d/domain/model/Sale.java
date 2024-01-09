@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Data
 public class Sale {
 
-    private Long id;
+    private Integer id;
     private LocalDateTime date;
     private Product product;
     private User user;

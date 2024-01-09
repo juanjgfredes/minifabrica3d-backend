@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class Cart {
 
-    private Long id;
+    private Integer id;
     private User user;
     private List<CartItem> cartItems;
 

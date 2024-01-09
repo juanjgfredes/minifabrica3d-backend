@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class Province {
 
-    private Long id;
+    private Integer id;
     private String name;
     private List<Department> departments;
 
